@@ -2,7 +2,7 @@ const tbody = document.getElementById("data-siswa");
 
 // mapping ID kelas → nama kelas (contoh)
 const classMap = {
-  "5fd01639-866b-48d0-b4a8-aefb67791964": "XI-C1"
+  "71497e72-3407-4d5f-aa1e-e68a7b5af897": "XI-C1"
 };
 
 // fungsi bantu: kapitalisasi nama
@@ -28,7 +28,7 @@ fetch("student_rows.json")
         <td>${index + 1}</td>
         <td>${student.nis}</td>
         <td>${capitalizeName(student.name)}</td>
-        <td>${classMap[student.class_id] || ""71497e72-3407-4d5f-aa1e-e68a7b5af897""}</td>
+        <td>${classMap[student.class_id] || "Tidak diketahui"}</td>
       `;
 
       tbody.appendChild(row);
@@ -42,6 +42,7 @@ fetch("student_rows.json")
       </tr>
     `;
   });
+
 
 
 
